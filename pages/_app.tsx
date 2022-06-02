@@ -1,6 +1,11 @@
 import * as React from "react";
 
-import { DataGridPro, GridColDef, GridRenderCellParams, GridRowsProp } from "@mui/x-data-grid-pro";
+import {
+  DataGridPro,
+  GridColDef,
+  GridRenderCellParams,
+  GridRowsProp,
+} from "@mui/x-data-grid-pro";
 
 const columns: GridColDef[] = [
   {
@@ -8,7 +13,7 @@ const columns: GridColDef[] = [
     headerName: "col1",
     width: 55,
     renderCell: (params: GridRenderCellParams) => (
-      <div tw="w-full flex justify-center">
+      <div>
         <img src="https://avatars.githubusercontent.com/u/64312219?s=80&v=4" />
       </div>
     ),
@@ -20,7 +25,11 @@ const columns: GridColDef[] = [
     headerName: "col1",
     width: 180,
     renderCell: (params: GridRenderCellParams) => (
-      <a href="https://google.com" target="_blank" style={{ color: "#556cd6", cursor: "pointer" }}>
+      <a
+        href="https://google.com"
+        target="_blank"
+        style={{ color: "#556cd6", cursor: "pointer" }}
+      >
         {params.value}
       </a>
     ),
@@ -30,7 +39,11 @@ const columns: GridColDef[] = [
     headerName: "col2",
     width: 180,
     renderCell: (params: GridRenderCellParams) => (
-      <a href="https://google.com" target="_blank" style={{ color: "#556cd6", cursor: "pointer" }}>
+      <a
+        href="https://google.com"
+        target="_blank"
+        style={{ color: "#556cd6", cursor: "pointer" }}
+      >
         {params.value}
       </a>
     ),
@@ -53,7 +66,15 @@ declare global {
 }
 
 const MyApp = (props) => {
-  return <DataGridPro rows={rows} columns={columns} pageSize={100} autoHeight rowHeight={55} />;
+  return (
+    <DataGridPro
+      rows={rows}
+      columns={columns}
+      pageSize={100}
+      autoHeight
+      rowHeight={55}
+    />
+  );
 };
 
 export default MyApp;
